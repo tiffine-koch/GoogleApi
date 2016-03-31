@@ -23,15 +23,38 @@ app.controller('locationsCtrl', function($rootScope, $scope, $http, LocService) 
         console.log('error');
     });
   }
+
+
   function initMap() {
-    // Create a map object and specify the DOM element for display.
+    var myLatLng = {lat: 37.773, lng: -122.431};
+
     var map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -34.397, lng: 150.644},
-      scrollwheel: false,
-      zoom: 8
+      zoom: 4,
+      center: myLatLng
     });
-    $scope.map = map;
+
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title: 'Hello World!'
+    });
   }
+
+  $scope.map = map;
+
+  $scope.deleteLoc = function(index, location) {
+  var id = location._id
+  var deleted = $scope.locations.splice(index, 1);
+  $http({
+    method: 'DELETE',
+    url: `/locations/${id}`
+  })
+  .then(function(data) {
+    console.log('success');
+  }, function(err) {
+    console.error(err);
+  })
+}
 });
 
 
