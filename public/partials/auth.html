@@ -1,0 +1,119 @@
+<h1>{{state | titlecase}}</h1>
+
+<br><hr>
+<form name='authForm' ng-submit='submit(user)'>
+
+  <div class="form-group">
+    <label for="username">Username:</label>
+    <input type="text"
+            class="form-control"
+            ng-model="user.username"
+            name="username"
+            id="username"
+            required>
+  </div>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password"
+            class="form-control"
+            ng-model="user.password"
+            name="password"
+            id="password"
+            required>
+  </div>
+  <div class="form-group" ng-if='state === "register"'>
+    <label for="password">Password (Again):</label>
+    <input type="password"
+            class="form-control"
+            ng-model="user.password2"
+            name="password2"
+            id="password2"
+            required>
+  </div>
+
+  <div class="form-group">
+    <button type="submit"
+            ng-disable="authForm.#invalid"
+            class='btn btn-default'>
+            {{state | titlecase}}!
+    </button>
+  </div>
+</form>
+<!-- </form>
+<div class="container form-group" ng-show='register'>
+  <form name="registrationForm" ng-controller='registerCtrl' novalidate ng-submit='register(regUser)'>
+    <h3>{{state | titlecase}}</h3>
+    <div class="">
+      <label>Username: </label>
+      <input type="text" ng-model='regUser.username'>
+    </div>
+    <div class="">
+      <label>Password: </label>
+      <input type="password" ng-model='regUser.password'>
+    </div>
+    <div class="">
+      <label>Confirm Password: </label>
+      <input type="text" ng-model='regUser.password2'>
+    </div>
+    <button>{{state | titlecase}}!</button>
+  </form>
+</div>
+
+<div class="container form-group" ng-hide='register'>
+  <form name="loginForm" ng-controller='loginCtrl' novalidate ng-submit='login(loginUser)'>
+    <h3>{{state | titlecase}}</h3>
+    <div class="">
+      <label>Password: </label>
+      <input type="password" ng-model='loginUser.password'>
+    </div>
+    <div class="">
+      <label>Username: </label>
+      <input type="text" ng-model='loginUser.username'>
+    </div>
+    <button>{{state | titlecase}}!</button>
+  </form> -->
+  <!-- <div ng-controller='testCtrl'>
+    <button ng-click="test()">Go to your profile!</button>
+  </div> -->
+<!-- </div>
+<br><hr> -->
+<!-- <h1>{{state | titlecase}}</h1>
+
+<br><hr>
+<div class="container form-group" ng-show='register'>
+  <form name="registrationForm" ng-controller='registerCtrl' novalidate ng-submit='register(regUser)'>
+    <h3>{{state | titlecase}}</h3>
+    <div class="">
+      <label>Username: </label>
+      <input type="text" ng-model='regUser.username'>
+    </div>
+    <div class="">
+      <label>Password: </label>
+      <input type="password" ng-model='regUser.password'>
+    </div>
+    <div class="">
+      <label>Confirm Password: </label>
+      <input type="text" ng-model='regUser.password2'>
+    </div>
+    <button>{{state | titlecase}}!</button>
+  </form>
+</div>
+
+<div class="container form-group" ng-hide='register'>
+  <form name="loginForm" ng-controller='loginCtrl' novalidate ng-submit='login(loginUser)'>
+    <h3>{{state | titlecase}}</h3>
+    <div class="">
+      <label>Password: </label>
+      <input type="password" ng-model='loginUser.password'>
+    </div>
+    <div class="">
+      <label>Username: </label>
+      <input type="text" ng-model='loginUser.username'>
+    </div>
+    <button>{{state | titlecase}}!</button>
+  </form>
+ <div ng-controller='testCtrl'>
+    <button ng-click="test()">Go to your profile!</button>
+  </div>
+</div>
+<br><hr>

@@ -1,0 +1,45 @@
+<div class="container">
+
+  <div id="map"></div>
+  <div id="class" ng-repeat="marker in markers | orderBy : 'title'">
+     <a href="#" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row" id="writeHead">
+    <div class="col s6" id="writeHeader">
+      <h3>Trip Log</h3>
+    </div>
+    <div id="writeBorder" class='col s6'>
+      <img id="locPic" src="img/siesta.jpeg" alt="">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12 m12">
+      <input type="text" class="filterLine" ng-model="filterText">
+      <label for="">Search</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div id="locList" class="col s12 m12" ng-repeat='location in locations | filter: filterText track by $index'>
+
+    <div class="col s12">
+      <p id="name">{{location.name}}</p>
+      <p id="date">{{location.date | date}}</p>
+      <p id="zip">{{location.zip}}</p>
+    </div>
+
+    <div class="col s6">
+      <p id="blog">{{location.bio}}</p>
+    </div>
+
+    <div class="col s6">
+      <img id="image" ng-src="{{location.image}}">
+    </div>
+    <hr>
+  </div>
+
+</div>
