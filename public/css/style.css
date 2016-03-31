@@ -27,6 +27,7 @@ a {
 }
 
 #map {
+    margin-bottom: 50px;
     height:420px;
     width:600px;
 }
